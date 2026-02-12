@@ -1,0 +1,42 @@
+/* body {
+        font-family: Arial;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    } */
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .card {
+        background-color: white;
+        width: 300px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.435);
+        text-align: center;
+        padding: 20px;
+    }
+
+    .card img {
+        width: 250px;
+        /*Define uma transição suave para a propriedade transform*/
+        transition: transform 0.3s;
+
+    }
+
+    .card img:hover {
+        /*Regra que aplica uma transformação sobre a tag img
+        no caso aumenta a escala da tag em 5%*/
+        transform: scale(1.05);
+    }
+
+    .mais {
+        text-align: left;
+        display: none;
+    }
