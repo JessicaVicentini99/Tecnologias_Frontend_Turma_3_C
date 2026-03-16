@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Pratica DOM</title>
+    </head>
+    <body>
+        <h1 id="titulo">Olá mundo!</h1>
+        <h2 class="estilo"> Mensagem teste</h2>
+        <h2 class="estilo"> Mensagem teste 2</h2>
+    </body>
+</html>
+<script>
+    let titulo = document.getElementById("titulo")
+    console.log(titulo.textContent)
+    titulo.textContent = "Olá, JavaScript!"
+
+    let tag_h2_class = document.getElementsByClassName("estilo")
+    console.log(tag_h2_class[0].textContent)
+
+    let tag_h1_tag = document.getElementsByTagName('h2')
+    console.log(tag_h1_tag)
+
+    let tag_h1_selector = document.querySelector("#titulo")
+    console.log(tag_h1_selector)
+
+    tag_h1_selector = document.querySelector(".estilo")
+    console.log(tag_h1_selector)
+
+    let tag_h1_selector_all = document.querySelectorAll(".estilo")
+    console.log(tag_h1_selector_all)
+
+</script>

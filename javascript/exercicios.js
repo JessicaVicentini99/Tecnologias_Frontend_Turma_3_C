@@ -40,3 +40,37 @@ if ((ano % 4 === 0 && ano % 100 !== 0) || (ano % 400 === 0)) {
     console.log(`O ano ${ano} não é bissexto`)
 }
  
+
+//4 e 5
+let nomes = ["Lucas", "Carla", "José", "Amanda"]
+nomes.push("Thiago")
+for (let nome of nomes) {
+    console.log(nome)
+}
+
+let nome_busca = prompt("Digite um nome")
+let encontrado = false
+for(let i = 0; i < nomes.length; i++) {
+    if (nome_busca == nomes[i]) {
+        encontrado = true
+    }
+}
+
+if (encontrado) {
+    console.log(`O ${nome_busca} foi encontrado`)
+} else {
+    console.log(`O ${nome_busca} não foi encontrado`)
+}
+
+//Ex 6
+
+let numeros = [9, 2, 5, 7]
+
+for (let i = 0; i < numeros.length; i++) {
+    console.log(`Tabuada do ${numeros[i]}`)
+    for (let j = 1; j <= 10; j++) {
+        let resultado = numeros[i] * j
+        console.log(`${numeros[i]} X ${j} = ${resultado}`)
+    }
+    console.log('-------------------')
+}
