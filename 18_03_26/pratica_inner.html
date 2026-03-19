@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Pratica seleção Elementos</title>
+    </head>
+    <body>
+        <div id="conteudo">
+            Texto simples
+        </div>
+        <button id="botao">Inserir HTML</button>
+    </body>
+</html>
+<script>
+    let botao = document.getElementById("botao")
+    let conteudo = document.getElementById("conteudo")
+    console.log(conteudo)
+    // botao.addEventListener("click", function() {
+    //     conteudo.innerHTML = "<strong>Texto em negrito!</strong>"
+    // })
+    botao.addEventListener("click", function() {
+        conteudo.innerHTML += "<strong>Texto em negrito!</strong>"
+    })
+</script>

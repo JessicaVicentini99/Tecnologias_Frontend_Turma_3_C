@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Pratica seleção Elementos</title>
+    </head>
+    <body>
+        <h1 id="titulo">Olá Mundo</h1>
+        <h1 class="estilo_titulo">Texto 2</h1>
+        <h2 class="estilo_titulo">Texto 3</h1>
+
+    </body>
+</html>
+<script>
+    //Selecionar elementos pelo id
+    let titulo = document.getElementById("titulo")
+    console.log(titulo)
+    console.log(titulo.textContent)
+    titulo.textContent = "Texto Alterado"
+
+    // //Selecionar um elemento pela classe
+    let titulo_2 = document.getElementsByClassName("estilo_titulo")
+    console.log(titulo_2)
+    console.log(titulo_2[0])
+    console.log(titulo_2[0].textContent)
+
+    // //Selecionar os elementos pela tag
+    let titulos_tag = document.getElementsByTagName("h1")
+    console.log(titulos_tag)
+    console.log(titulos_tag[0].textContent)
+    console.log(titulos_tag[1].textContent)
+    console.log(titulos_tag.length)
+
+    //Selecionar pelo query selector    
+    let titulos_tag_by_id = document.querySelector("#titulo")
+    console.log(titulos_tag_by_id)
+    let titulos_tag_by_class = document.querySelector(".estilo_titulo")
+    console.log(titulos_tag_by_class)
+
+    let titulos = document.querySelectorAll(".estilo_titulo")
+    console.log(titulos[0])
+
+    for (let i = 0; i < titulos.length; i++) {
+        console.log(i)
+        console.log(titulos[i].textContent)
+    }
+</script>

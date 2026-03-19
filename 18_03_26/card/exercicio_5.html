@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card de Personagem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /*Você define display: flex no elemento pai
+            que conterá os itens que você deseja alinhar ou organizar.
+             Este elemento se torna o "flex container".*/
+            display: flex;
+            /*Essa propriedade alinha os flex itens ao
+            longo do eixo principal do contêiner flexível. O eixo principal
+             é determinado pela propriedade flex-direction (que, se não for
+              especificada, tem o valor padrão row, ou seja, horizontal).*/
+            justify-content: center;
+            /*Esta propriedade alinha os flex itens ao longo do
+            eixo transversal do flex container. O eixo transversal (cross axis)
+             é perpendicular ao eixo principal.
+             Neste caso, entraliza os flex itens verticalmente dentro do contêiner
+             */
+            align-items: center;
+            /*Esta propriedade define a altura do elemento.
+            ignifica 100% da altura da viewport (a área visível do navegador).
+            Portanto, o elemento ao qual essa propriedade é aplicada terá a altura total da tela do usuário.
+            */
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .card {
+            background: white;
+            width: 300px;
+            /*Define o espaço interno entre o conteúdo do elemento .card e suas bordas.*/
+            /*20 pixels para todos os lados (superior, inferior, esquerdo e direito)*/
+            /*Você pode usar valores diferentes para cada lado,
+            por exemplo: padding: 10px 20px; (10px superior e inferior, 20px esquerdo e direito).*/
+            padding: 20px;
+            border-radius: 10px;
+            /*O primeiro 0 é o deslocamento horizontal (nenhum deslocamento)
+            e o segundo 0 é o deslocamento vertical (nenhum deslocamento).*/
+            /*10px: O terceiro valor define o raio de espalhamento da sombra (blur radius).
+            Um valor maior cria uma sombra mais difusa.*/
+            /*rgba(0, 0, 0, 0.1): O quarto valor define a cor da sombra. rgba significa "red, green, blue, alpha".
+             0, 0, 0 representa preto e 0.1 é o valor alfa (opacidade), onde 0 é totalmente transparente e 1 é totalmente opaco. Portanto, rgba(0, 0, 0, 0.1) define*/
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /*Alinha o texto dentro do elemento .card ao centro.*/
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            /* Define uma transição suave para a propriedade transform.*/
+            transition: transform 0.3s;
+        }
+        /*Esta regra se aplica quando o mouse passa por cima (hover)
+         da imagem dentro do .card.*/
+        .card img:hover {
+            /*aumenta a escala da imagem em 5% quando
+             o mouse passa por cima dela.*/
+            transform: scale(1.05);
+        }
+
+        .mais {
+            margin-top: 10px;
+            text-align: left;
+            display: none;
+        }
+    </style>
+</head>
+    <body>
+        <div class="card">
+            <h2 id="nome">Charmander</h2>
+            <img id="imagem" src="charmander.png" alt="Personagem">
+            <p id="descricao">
+                The flame on its tail shows the strength of its life-force. If Charmander is weak, the flame also burns weakly.
+            </p>
+            <button id="botao">Mostrar Mais</button>
+            <ul id="mais" class="mais">
+                <li>Type: Fire</li>
+                <li>Weakness: Water, Ground, Rock</li>
+                <li>Category: Lizard</li>
+            </ul>
+        </div>
+    </body>
+</html>
+<script>
+    let imagem = document.getElementById("imagem")
+    let titulo = document.getElementById("nome")
+    let botao = document.getElementById("botao")
+    let mais = document.getElementById("mais")
+
+    // console.log(mais.style)
+
+    imagem.addEventListener("mouseover", function() {
+        titulo.textContent = "Charmander Shiny"
+        imagem.src = "shiny-charmander.png"
+    })
+
+    imagem.addEventListener("mouseout", function() {
+        titulo.textContent = "Charmander"
+        imagem.src = "charmander.png"
+    })
+
+    botao.addEventListener("click", function() {
+        let exibir = mais.style.display == "none" ? "block" : "none"
+        mais.style.display = exibir
+    })
+</script>

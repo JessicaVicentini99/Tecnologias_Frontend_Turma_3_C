@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Pratica manipulação</title>
+    </head>
+    <body>
+        <input id="campo" type="text" placeholder="Digite algo">
+        <button id="botao">Exibir valor</button>
+        <p id="conteudo"></p>
+    </body>
+</html>
+<script>
+    let botao = document.getElementById("botao")
+    let campo = document.getElementById("campo")
+    let conteudo = document.getElementById("conteudo")
+    console.log(campo.value)
+    botao.addEventListener("click", function() {
+        conteudo.textContent = "Você digitou " + campo.value
+        conteudo.style.backgroundColor = "yellow"
+    })
+</script>
